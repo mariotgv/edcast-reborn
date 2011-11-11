@@ -1,5 +1,7 @@
 #summary Detailed changelog
 
+* 11/11/2011 - Version 3.36*_.2011.1111_
+  * Fix Winamp DSP plugin initialisation
 * 30/10/2011 - Version 3.35*_.2011.1030_
   * ASIO sample rate selection
 * 26/10/2011 - Version 3.34*_.2011.1026_
