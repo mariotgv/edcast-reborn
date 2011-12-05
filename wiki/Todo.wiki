@@ -1,0 +1,22 @@
+#summary Rough TODO/feature request list
+#labels Phase-Requirements
+
+= Introduction =
+
+A rough list of things to do, now, or for v4
+
+
+= Details =
+
+  * Foobar 2k plugin
+  * VST plugin
+  * On Air timer (per encoder? overall? both?)
+  * delay metadata per encoder
+  * enable/disable metadata per encoder
+  * dump metadata history to a metadata log file
+  * user/pass for icecast2
+  * DNAS v2 support
+  * better SC_TRANS DJ v2 support
+  * preconfig - see issue #8
+
+More to come as I think of them
