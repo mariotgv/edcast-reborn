@@ -5,7 +5,7 @@
   * insane handling of MP3 settings made saner
   * VBR and ABR modes still only settable by editing cfg file directly, but should work properly
   * lame enc has two quality settings, VBRQuality (for VBR mode only) and Quality. Not sure what the Quality setting actually does, but it follows VBRQuality setting now.
-  * some "interesting" preset values shown in cfg file
+  * some "interesting" preset values shown in cfg file, however all presets (-1 to 12) are supported - documentation is sparse - look at http://openinnowhere.sourceforge.net/lameonj/LameDLLInterface.htm under nPreset. Note: LQP_NOPRESET is -1, LQP_NORMAL_QUALITY is 0, and so forth up to LQP_CBR is 12
 * 11/11/2011 - Version 3.36*_.2011.1111_ (BETA)
   * Fix Winamp DSP plugin initialisation
 * 30/10/2011 - Version 3.35*_.2011.1030_
