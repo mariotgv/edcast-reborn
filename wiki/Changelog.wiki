@@ -4,6 +4,8 @@
   * MP3 quality setting config hint wrongly described quality
   * insane handling of MP3 settings made saner
   * VBR and ABR modes still only settable by editing cfg file directly, but should work properly
+  * lame enc has two quality settings, VBRQuality (for VBR mode only) and Quality. Not sure what the Quality setting actually does, but it follows VBRQuality setting now.
+  * some "interesting" preset values shown in cfg file
 * 11/11/2011 - Version 3.36*_.2011.1111_ (BETA)
   * Fix Winamp DSP plugin initialisation
 * 30/10/2011 - Version 3.35*_.2011.1030_
