@@ -25,3 +25,4 @@ The following features / bug fixes have been added to oddsock's edcast
   * Fix config file issues
   * Sample rate selection for ASIO
   * VU Meter in RMS mode also shows peak
+  * fix MP3 settings - should be able to actually use some of the more esoteric settings.
