@@ -1,12 +1,16 @@
 #summary Detailed changelog
 
-* 11/11/2011 - Version 3.36*_.2011.1111_
+* 14/12/2011 - Version 3.37*_.2011.1214_ (BETA)
+  * MP3 quality setting config hint wrongly described quality
+  * insane handling of MP3 settings made saner
+  * VBR and ABR modes still only settable by editing cfg file directly, but should work properly
+* 11/11/2011 - Version 3.36*_.2011.1111_ (BETA)
   * Fix Winamp DSP plugin initialisation
 * 30/10/2011 - Version 3.35*_.2011.1030_
   * ASIO sample rate selection
-* 26/10/2011 - Version 3.34*_.2011.1026_
+* 26/10/2011 - Version 3.34*_.2011.1026_ (BETA)
   * Add pre GAIN to limiter - currently only functions while limiter is active - will become independant
-* 26/10/2011 - Version 3.33*_.2011.1026_
+* 26/10/2011 - Version 3.33*_.2011.1026_ (RELEASE)
   * ASIO control panel - click the ASIO logo. Note: input will cease while ASIO control panel is shown.
 * 23/10/2011 - Version 3.32*_.2011.1023_
   * Fix limiter to limit on PEAK not RMS ... derp
