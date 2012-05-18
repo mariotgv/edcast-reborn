@@ -1,0 +1,609 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+#define COMPANY_NAME_STR		"PC GraFix"
+#define PRODUCT_NAME_STR		"Edcast"
+#define PRODUCT_VERSION_STR		"3.38"
+#define PRODUCT_VERSION			 3,38
+#define SYNCED_FILE_VERSION		 3,38,2012,0423
+#define SYNCED_FILE_VERSION_STR	"3.38.2012.0423"
+#define PRODUCT_BUILD_STR		"jaromanda@gmail.com"
+//#define ALL_COMMENTS			""
+#define COPYRIGHT				"(c) Copyright 2010-2012 PC GraFix"
+#ifdef EDWINAMP
+#ifdef EDWINAMPFH
+#define PRODUCT_DESC			"Edcast Winamp"
+#define INTERNAL_NAME			"dsp_edcastfh"
+#define ORIGINAL_NAME			"dsp_edcastfh.dll"
+#define SPECIAL_BUILD			"FRAUNHOFER"
+#else
+#define PRODUCT_DESC			"Edcast Winamp"
+#define INTERNAL_NAME			"dsp_edcast"
+#define ORIGINAL_NAME			"dsp_edcast.dll"
+#endif
+#endif
+#ifdef EDSTANDALONE
+#define PRODUCT_DESC			"Edcast Standalone"
+#define INTERNAL_NAME			"EdcastStandalone"
+#define ORIGINAL_NAME			"edcastStandalone.exe"
+#endif
+#ifdef EDASIO
+#define PRODUCT_DESC			"Edcast ASIO"
+#define INTERNAL_NAME			"EdcastASIO"
+#define ORIGINAL_NAME			"edcastASIO.exe"
+#define SPECIAL_BUILD			"ASIO"
+#endif
+#ifdef EDMULTI
+#define PRODUCT_DESC			"Edcast MULTI"
+#define INTERNAL_NAME			"EdcastMulti"
+#define ORIGINAL_NAME			"edcastMulti.exe"
+#define SPECIAL_BUILD			"ASIO MULTI"
+#endif
+
+// ***********************************************************************
+// MAIN DIALOG
+// ***********************************************************************
+#if USE_LIMIT_SLIDERS
+IDD_EDCAST DIALOGEX 0, 0, 281, 333
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "EdCast"
+MENU IDR_MAINMENU
+FONT 8, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "Edit",IDC_MANUALEDIT_METADATA,49,2,19,12
+	EDITTEXT        IDC_METADATA,11,16,260,26,ES_CENTER | ES_MULTILINE | ES_READONLY | ES_WANTRETURN
+    CONTROL         "",IDC_METER,"Static",SS_BLACKFRAME | SS_NOTIFY,33,47,215,18,WS_EX_CLIENTEDGE
+
+    GROUPBOX        "",IDC_STATIC,11,70,263,46
+    CONTROL         "Limiter",IDC_LIMITER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,95,57,10
+
+    CONTROL         "dB gain",IDC_GAINDB,"msctls_trackbar32",TBS_TOP| TBS_AUTOTICKS | WS_TABSTOP,	 58, 75, 84, 19
+	RTEXT			"dB gain", IDC_STATIC,															 28, 80, 25,  8
+	RTEXT			"", IDC_GAINDBTEXT,																 13, 80, 13,  8
+
+    CONTROL         "dB limit",IDC_LIMITDB,"msctls_trackbar32",TBS_TOP| TBS_AUTOTICKS | WS_TABSTOP,	188, 75, 64, 19
+	RTEXT			"dB Limit", IDC_STATIC,															158, 80, 25,  8
+	RTEXT			"", IDC_LIMITDBTEXT,															143, 80, 13,  8
+
+    CONTROL         "PreEmphasis",IDC_LIMITPREEMPH,"msctls_trackbar32",TBS_BOTTOM| TBS_AUTOTICKS | WS_TABSTOP,	135, 95, 117, 19
+	RTEXT			"uSec Pre-emphasis", IDC_STATIC,															 69, 105, 65,  8
+	RTEXT			"", IDC_LIMITPREEMPHTEXT,																	 60, 105,  9,  8
+
+
+    GROUPBOX        "Live Recording",IDC_STATIC,11,117,263,41
+    COMBOBOX        IDC_RECCARDS,59,128,112,73,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+	COMBOBOX        IDC_RECDEVICES,182,128,74,73,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_LIVEREC,"Button",BS_AUTOCHECKBOX | BS_BITMAP | BS_PUSHLIKE | BS_FLAT | WS_TABSTOP,23,131,21,19
+    CONTROL         "Slider1",IDC_RECVOLUME,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,54,142,205,13
+	COMBOBOX		IDC_ASIORATE,182,142,74,73,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+
+    CONTROL         "AutoConnect",IDC_AUTOCONNECT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,164,57,10
+
+	CONTROL			"Start in Tray",IDC_MINIM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP, 70, 164, 67, 10
+
+    PUSHBUTTON      "&Connect",IDC_CONNECT,7,179,50,14,0,0,HIDC_CONNECT
+    DEFPUSHBUTTON   "Add Encoder",IDC_ADD_ENCODER,64,179,50,14
+    DEFPUSHBUTTON   "Button1",IDC_BUTTON1,187,184,31,8,NOT WS_VISIBLE | NOT WS_TABSTOP
+    PUSHBUTTON      "Button2",IDCANCEL,231,184,36,6,NOT WS_VISIBLE | NOT WS_TABSTOP
+    CONTROL         "List1",IDC_ENCODERS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,7,196,267,101
+
+    LTEXT           "Metadata",IDC_STATIC,12,4,31,8
+    LTEXT           "R",IDC_STATIC,25,56,8,8
+    LTEXT           "L",IDC_STATIC,25,48,8,8
+    LTEXT           "Peak\r\nMeter",IDC_METER_PEAK,251,47,21,17
+    LTEXT           "RMS\r\nMeter",IDC_METER_RMS,251,47,21,17
+    LTEXT           "Off",IDC_VUONOFF,251,51,21,8
+    LTEXT           "-60",IDC_STATIC,36,66,11,8
+    LTEXT           "-45",IDC_STATIC,87,66,11,8
+    LTEXT           "-30",IDC_STATIC,138,66,11,8
+    LTEXT           "-15",IDC_STATIC,189,66,11,8
+    LTEXT           "0",IDC_STATIC,242,66,8,8
+    LTEXT           "dB",IDC_STATIC,22,66,10,8
+
+    CTEXT           "",IDC_STATIC_STATUS,0,314,277,13
+END
+#else
+IDD_EDCAST DIALOGEX 0, 0, 281, 293
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "EdCast"
+MENU IDR_MAINMENU
+FONT 8, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "Edit",IDC_MANUALEDIT_METADATA,49,2,19,12
+	EDITTEXT        IDC_METADATA,11,16,260,26,ES_CENTER | ES_MULTILINE | ES_READONLY | ES_WANTRETURN
+    CONTROL         "",IDC_METER,"Static",SS_BLACKFRAME | SS_NOTIFY,33,47,156,18,WS_EX_CLIENTEDGE
+    CONTROL         "Limter",IDC_LIMITER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,215,50,57,10
+
+	GROUPBOX        "Live Recording",IDC_STATIC,11,77,263,41
+    COMBOBOX        IDC_RECCARDS,59,88,112,73,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+	COMBOBOX        IDC_RECDEVICES,182,88,74,73,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_LIVEREC,"Button",BS_AUTOCHECKBOX | BS_BITMAP | BS_PUSHLIKE | BS_FLAT | WS_TABSTOP,23,91,21,19
+    CONTROL         "Slider1",IDC_RECVOLUME,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,54,102,205,13
+    CONTROL         "AutoConnect",IDC_AUTOCONNECT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,124,57,10
+    PUSHBUTTON      "&Connect",IDC_CONNECT,7,139,50,14,0,0,HIDC_CONNECT
+    DEFPUSHBUTTON   "Add Encoder",IDC_ADD_ENCODER,64,139,50,14
+    DEFPUSHBUTTON   "Button1",IDC_BUTTON1,187,144,31,8,NOT WS_VISIBLE | NOT WS_TABSTOP
+    PUSHBUTTON      "Button2",IDCANCEL,231,144,36,6,NOT WS_VISIBLE | NOT WS_TABSTOP
+    CONTROL         "List1",IDC_ENCODERS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,7,156,267,101
+
+    LTEXT           "Metadata",IDC_STATIC,12,4,31,8
+    LTEXT           "R",IDC_STATIC,25,56,8,8
+    LTEXT           "L",IDC_STATIC,25,48,8,8
+    LTEXT           "Peak\r\nMeter",IDC_METER_PEAK,192,47,21,17
+    LTEXT           "RMS\r\nMeter",IDC_METER_RMS,192,47,21,17
+    LTEXT           "Off",IDC_VUONOFF,192,51,21,8
+    LTEXT           "-60",IDC_STATIC,36,66,11,8
+    LTEXT           "-45",IDC_STATIC,71,66,11,8
+    LTEXT           "-30",IDC_STATIC,108,66,11,8
+    LTEXT           "-15",IDC_STATIC,145,66,11,8
+    LTEXT           "0",IDC_STATIC,182,66,8,8
+    LTEXT           "dB",IDC_STATIC,22,66,10,8
+
+    CTEXT           "",IDC_STATIC_STATUS,0,274,277,13
+END
+#endif
+// ***********************************************************************
+// METADATA DIALOG
+// ***********************************************************************
+IDD_EDIT_METADATA DIALOGEX 0, 0, 258, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "Set / Lock Metadata"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "Lock Metadata",IDC_LOCK_METADATA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,155,12,64,10
+    EDITTEXT        IDC_METADATA,49,28,182,15,ES_AUTOHSCROLL
+    CONTROL         "URL",IDC_METAURL,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    23,96,31,10
+    CONTROL         "File",IDC_METAFILE,"Button",BS_AUTORADIOBUTTON,23,110,
+                    27,10
+    CONTROL         "Disabled",IDC_METADISABLE,"Button",BS_AUTORADIOBUTTON,
+                    23,124,43,10
+    EDITTEXT        IDC_META_URL,63,94,166,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_META_FILE,63,109,166,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_METADATA_INTERVAL,70,140,60,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,77,247,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,133,247,50,14
+    LTEXT           "Metadata",IDC_STATIC,14,30,31,8
+    GROUPBOX        "External Metadata",IDC_STATIC,7,84,236,78
+    LTEXT           "Interval (secs)",IDC_STATIC,20,142,45,8
+    GROUPBOX        "Manually Enter Metadata",IDC_STATIC,8,4,236,75
+    GROUPBOX        "Grab Metadata From Window Title",IDC_GRABSTATIC,7,168,
+                    236,73
+    PUSHBUTTON      "Find Window",IDC_FINDWINDOW,186,181,50,14
+    EDITTEXT        IDC_WINDOWCLASS,79,181,98,14,ES_AUTOHSCROLL
+    LTEXT           "Window Class",IDC_STATIC,28,183,46,8
+    EDITTEXT        IDC_REMOVESTRINGAFTER,109,201,67,14,ES_AUTOHSCROLL
+    LTEXT           "Truncate everything after and including this string",
+                    IDC_STATIC,10,200,94,19
+    CONTROL         "",IDC_WINDOWTITLEGRAB,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,179,16,8
+    LTEXT           "Append String",IDC_STATIC,14,51,46,8
+    EDITTEXT        IDC_APPENDSTRING,67,47,164,15,ES_AUTOHSCROLL
+    LTEXT           "* may take a song change to take affect",IDC_STATIC,37,
+                    65,128,8
+    EDITTEXT        IDC_REMOVESTRINGBEFORE,109,222,67,14,ES_AUTOHSCROLL
+    LTEXT           "Truncate everything before and including this string",
+                    IDC_STATIC,10,221,94,19
+END
+
+// ***********************************************************************
+// CONFIG DIALOG
+// ***********************************************************************
+IDD_CONFIG DIALOG DISCARDABLE  0, 0, 355, 291
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU 
+CAPTION "Configuration"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "Tab1",IDC_TAB1,"SysTabControl32", /*TCS_BUTTONS |*/ WS_TABSTOP ,6,16,342,270
+    DEFPUSHBUTTON   "OK",IDOK,240,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,297,7,50,14
+END
+
+// ***********************************************************************
+// BASIC CONFIG DIALOG
+// ***********************************************************************
+//IDD_PROPPAGE_LARGE DIALOG DISCARDABLE  7, 30, 340, 251
+IDD_PROPPAGE_LARGE DIALOG DISCARDABLE  7, 32, 336, 249
+STYLE DS_CONTROL | WS_CHILD
+FONT 8, "MS Shell Dlg"
+BEGIN
+    EDITTEXT        IDC_BITRATE,112,12,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_QUALITY,112,29,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SAMPLERATE,112,46,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CHANNELS,112,63,40,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_ENCODER_TYPE,112,81,64,68,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SERVER_TYPE,112,98,48,60,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SERVER_IP,112,114,89,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SERVER_PORT,112,131,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD,112,148,89,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MOUNTPOINT,112,165,89,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RECONNECTSECS,112,183,40,14,ES_AUTOHSCROLL
+#ifdef EDMULTI
+	COMBOBOX		IDC_MULTIASIOCHANNEL, 20,229,140, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_MULTIASIOCHANNEL2, 160,229,140, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+#endif
+	EDITTEXT		IDC_ATTENUATION,112,200,64,14,ES_AUTOHSCROLL
+    RTEXT           "Bitrate",IDC_STATIC,33,15,70,8
+    RTEXT           "Quality",IDC_STATIC,33,31,70,8
+    RTEXT           "Samplerate",IDC_STATIC,33,48,70,8
+    RTEXT           "Channels",IDC_STATIC,33,65,70,8
+    LTEXT           "* 1 for Mono, 2 for Stereo",IDC_STATIC,156,65,80,8
+    RTEXT           "Encoder Type",IDC_STATIC,33,83,70,8
+    RTEXT           "Server Type",IDC_STATIC,33,100,70,8
+    RTEXT           "Server IP",IDC_STATIC,33,117,70,8
+    RTEXT           "Server Port",IDC_STATIC,33,134,70,8
+    RTEXT           "Encoder Password",IDC_STATIC,33,151,70,8
+    RTEXT           "Mountpoint",IDC_STATIC,33,168,70,8
+    LTEXT           "* Required for Icecast servers",IDC_STATIC,204,168,102,8
+    RTEXT           "Reconnect Seconds",IDC_STATIC,33,184,70,8
+    //GROUPBOX        "",IDC_STATIC,0,0,340,251
+    //GROUPBOX        "",IDC_STATIC,0,0,330,241
+    CONTROL         "Use bitrate",IDC_USEBITRATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,181,16,108,10
+    CONTROL         "",IDC_JOINTSTEREO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,200,82,10,10
+    LTEXT			"Joint Stereo",IDC_JOINTSTEREOLABEL,215,82,102,10
+    LTEXT			"Parametric Stereo",IDC_PARASTEREOLABEL,215,82,102,10
+    RTEXT           "Attenuation",IDC_STATIC,33,202,70,8
+END
+
+// ***********************************************************************
+// YP CONFIG DIALOG
+// ***********************************************************************
+//IDD_PROPPAGE_LARGE1 DIALOG DISCARDABLE  7, 30, 340, 251
+IDD_PROPPAGE_LARGE1 DIALOG DISCARDABLE  7, 32, 336, 249
+STYLE DS_CONTROL | WS_CHILD
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "Public Server",IDC_PUBLIC,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,44,18,58,10
+    EDITTEXT        IDC_STREAMNAME,93,35,117,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STREAMDESC,93,56,117,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STREAMURL,93,77,117,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STREAMGENRE,93,98,117,14,ES_AUTOHSCROLL
+    RTEXT           "Stream Name",IDC_STATIC,43,38,44,8
+    RTEXT           "Stream Description",IDC_STATIC,27,59,60,8
+    RTEXT           "Stream URL",IDC_STATIC,47,80,40,8
+    RTEXT           "Stream Genre",IDC_STATIC,43,101,44,8
+//    GROUPBOX        "",IDC_STATIC,0,0,340,251
+    RTEXT           "ICQ #",IDC_STATIC,66,121,20,8
+    RTEXT           "AIM",IDC_STATIC,71,140,14,8
+    RTEXT           "IRC",IDC_STATIC,72,161,13,8
+    EDITTEXT        IDC_ICQ,93,118,117,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_AIM,93,138,117,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_IRC,93,159,117,14,ES_AUTOHSCROLL
+END
+
+// ***********************************************************************
+// ADVANCED CONFIG DIALOG
+// ***********************************************************************
+//IDD_PROPPAGE_LARGE2 DIALOG DISCARDABLE  7, 30, 340, 251
+IDD_PROPPAGE_LARGE2 DIALOG DISCARDABLE  7, 32, 336, 249
+STYLE DS_CONTROL | WS_CHILD
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "Save Archive Of Stream",IDC_SAVESTREAM,"Button", BS_AUTOCHECKBOX | WS_TABSTOP,	 50, 18, 92, 10
+    CONTROL         "Save As WAV",IDC_SAVEWAV,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,				172, 18, 61, 10
+    EDITTEXT        IDC_ARCHIVE_DIRECTORY,															103, 31,131, 14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LOGLEVEL,																	103, 49, 44, 14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LOGFILE,																	103, 69,131, 14,ES_AUTOHSCROLL
+    CONTROL         "Always Record From DSP",IDC_FORCEDSP,"Button", BS_AUTOCHECKBOX | WS_TABSTOP,	 50, 84, 92, 10
+#ifdef EDMULTI
+    CONTROL         "Timed Stream",IDC_TIMEDSTREAM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,			 30,  94,108, 10
+	COMBOBOX		IDC_MONONTIME,																	100, 109, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_MONOFFTIME,																	150, 109, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_TUEONTIME,																	100, 129, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_TUEOFFTIME,																	150, 129, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_WEDONTIME,																	100, 149, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_WEDOFFTIME,																	150, 149, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_THUONTIME,																	100, 169, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_THUOFFTIME,																	150, 169, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_FRIONTIME,																	100, 189, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_FRIOFFTIME,																	150, 189, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_SATONTIME,																	100, 209, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_SATOFFTIME,																	150, 209, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_SUNONTIME,																	100, 229, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+	COMBOBOX		IDC_SUNOFFTIME,																	150, 229, 40, 68,CBS_DROPDOWNLIST | CBS_SORT |  WS_VSCROLL | WS_TABSTOP
+
+	CONTROL			"Monday",IDC_MONENABLE,"Button", BS_AUTOCHECKBOX | WS_TABSTOP,					 30,114, 60,  8
+	CONTROL			"Tuesday",IDC_TUEENABLE,"Button", BS_AUTOCHECKBOX | WS_TABSTOP,					 30,134, 60,  8
+	CONTROL			"Wednesday",IDC_WEDENABLE,"Button", BS_AUTOCHECKBOX | WS_TABSTOP,				 30,154, 60,  8
+	CONTROL			"Thursday",IDC_THUENABLE,"Button", BS_AUTOCHECKBOX | WS_TABSTOP,				 30,174, 60,  8
+	CONTROL			"Friday",IDC_FRIENABLE,"Button", BS_AUTOCHECKBOX | WS_TABSTOP,					 30,194, 60,  8
+	CONTROL			"Saturday",IDC_SATENABLE,"Button", BS_AUTOCHECKBOX | WS_TABSTOP,				 30,214, 60,  8
+	CONTROL			"Sunday",IDC_SUNENABLE,"Button", BS_AUTOCHECKBOX | WS_TABSTOP,					 30,234, 60,  8
+#endif
+//    GROUPBOX        "",IDC_STATIC,0,0,340,251
+    RTEXT           "Archive Directory",IDC_STATIC,													 37, 34, 55,  8
+    RTEXT           "Log Level",IDC_STATIC,															 60, 52, 32,  8
+    RTEXT           "Log File",IDC_STATIC,															 66, 72, 26,  8
+
+#ifdef EDMULTI
+	CTEXT			"ON",IDC_ONLABEL,																100, 94, 40,  8
+	CTEXT			"OFF",IDC_OFFLABEL,																150, 94, 40,  8
+#endif
+END
+
+// ***********************************************************************
+// ABOUT DIALOG
+// ***********************************************************************
+IDD_ABOUT DIALOGEX 0, 0, 315, 163
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "About"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,123,142,50,14
+    CONTROL         IDB_LOGO,IDC_STATIC,"Static",SS_BITMAP,7,7,301,84
+    CTEXT           "Original Edcast written by Oddsock", IDC_STATIC,48,95,218,13
+    CTEXT           SYNCED_FILE_VERSION_STR, IDC_STATIC,48,105,218,13
+    CTEXT           "",IDC_VERSION,76,115,145,8
+    CTEXT           "",IDC_CONFIGPATH,5,128,305,13
+END
+
+// ***********************************************************************
+// DUMMY DIALOG
+// ***********************************************************************
+/*
+IDD_DUMMY DIALOGEX 0, 0, 290, 225
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "Edcast Standalone"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "Main Window",IDC_SHOWMAIN,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,224,7,50,13
+    CONTROL         124,IDC_STATIC,"Static",SS_BITMAP,7,1,110,31
+END
+*/
+// ***********************************************************************
+// FIND WINDOW DIALOG
+// ***********************************************************************
+IDD_FINDWINDOW_DLG DIALOG DISCARDABLE  0, 0, 267, 174
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Find Windows"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "List2",IDC_FINDWINDOW,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,7,7,253,160
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_EDCAST, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 259
+    END
+
+    IDD_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 347
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 233
+    END
+
+    IDD_PROPPAGE_LARGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 321
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 204
+    END
+
+    IDD_PROPPAGE_LARGE1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 204
+    END
+
+    IDD_PROPPAGE_LARGE2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 204
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 308
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_FINDWINDOW_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 167
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_CONTEXT MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "Connect",                     ID_POPUP_CONNECT
+        MENUITEM "Configure",                   ID_POPUP_CONFIGURE
+        MENUITEM SEPARATOR
+        MENUITEM "Delete",                      ID_POPUP_DELETE
+    END
+END
+
+IDR_MAINMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "About"
+    BEGIN
+        MENUITEM "Help",                        ID_ABOUT_HELP
+        MENUITEM "About",                       ID_ABOUT_ABOUT
+    END
+END
+
+IDR_ICON MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Restore",                     ID__RESTORE
+    END
+END
+
+IDR_SYSTRAY MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "Restore",                     IDI_RESTORE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ASIO                BITMAP  DISCARDABLE     "asio_on.bmp"
+IDB_LIVE_ON             BITMAP  DISCARDABLE     "live_on.bmp"
+IDB_LIVE_OFF            BITMAP  DISCARDABLE     "live_off.bmp"
+IDB_LOGO                BITMAP  DISCARDABLE     "oddsock_logo_new.bmp"
+//IDB_SMALLLOGO           BITMAP  DISCARDABLE     "oddsock_small_logo.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "icon.ico"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION		SYNCED_FILE_VERSION
+PRODUCTVERSION	PRODUCT_VERSION
+FILEFLAGSMASK	VS_FFI_FILEFLAGSMASK
+#ifdef SPECIAL_BUILD
+FILEFLAGS		VS_FF_SPECIALBUILD
+#else
+FILEFLAGS		0
+#endif
+FILEOS			VOS_NT_WINDOWS32
+#ifdef EDWINAMP
+FILETYPE		VFT_DLL
+#else
+FILETYPE		VFT_APP
+#endif
+FILESUBTYPE		0
+
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "0c0904b0"
+        BEGIN
+            VALUE "FileDescription",	PRODUCT_DESC
+            VALUE "FileVersion",		SYNCED_FILE_VERSION_STR
+            VALUE "InternalName",		INTERNAL_NAME
+            VALUE "OriginalFilename",	ORIGINAL_NAME
+#ifdef ALL_COMMENTS
+            VALUE "Comments",			ALL_COMMENTS
+#endif
+			VALUE "CompanyName",		COMPANY_NAME_STR
+            VALUE "ProductName",		PRODUCT_NAME_STR
+            VALUE "ProductVersion",		PRODUCT_VERSION_STR
+            VALUE "Product Build",		PRODUCT_BUILD_STR
+			VALUE "LegalCopyright",		COPYRIGHT
+#ifdef SPECIAL_BUILD
+			VALUE "SpecialBuild",		SPECIAL_BUILD
+#endif
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0c09, 0x04b0
+    END
+END
