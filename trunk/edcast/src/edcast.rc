@@ -534,7 +534,6 @@ END
 // Bitmap
 //
 
-IDB_ASIO                BITMAP  DISCARDABLE     "asio_on.bmp"
 IDB_LIVE_ON             BITMAP  DISCARDABLE     "live_on.bmp"
 IDB_LIVE_OFF            BITMAP  DISCARDABLE     "live_off.bmp"
 IDB_LOGO                BITMAP  DISCARDABLE     "oddsock_logo_new.bmp"
