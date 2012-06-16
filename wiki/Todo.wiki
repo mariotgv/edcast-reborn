@@ -25,5 +25,6 @@ A rough list of things to do, now, or for v4
   * mp3PRO support - issue #16
   * delay metadata per encoder - issue #17
   * VST plugin - issue #18
+  * Write an alternate HE-AAC encoder for DSP, and therefore once again have a legal HE-AAC encoder for the standalone versions
 
 More to come as I think of them
